@@ -1,187 +1,1332 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio | Marketing e Execução de Eventos</title>
-    <meta
-      name="description"
-      content="Portfólio profissional de marketing e execução de eventos presenciais e online com foco em estratégia, operação e resultados reais."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="bg-shape bg-shape--top"></div>
-    <div class="bg-shape bg-shape--bottom"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Júlia Ariane — Marketing & Eventos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde:          #3D5A3E;
+  --verde-claro:    #5C7A5D;
+  --verde-muted:    #8FA88F;
+  --marrom:         #7A5230;
+  --marrom-claro:   #B8834A;
+  --bege:           #F0E9DC;
+  --bege-escuro:    #DDD0BC;
+  --creme:          #FAF7F2;
+  --preto:          #1C1B18;
+  --cinza:          #6B6660;
+}
 
-    <header class="hero section" id="topo">
-      <nav class="nav">
-        <span class="brand">Julia • Marketing & Eventos</span>
-        <a class="nav__cta" href="#contato">Vamos conversar</a>
-      </nav>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-      <div class="hero__content">
-        <p class="kicker">PORTFÓLIO PROFISSIONAL</p>
-        <h1>Marketing e execução de eventos que geram resultado real.</h1>
-        <p>
-          Da estratégia ao dia do evento: conduzo projetos complexos com organização,
-          tomada de decisão rápida e entrega consistente em congressos, feiras,
-          stands e eventos online.
-        </p>
-        <a class="btn btn--primary" href="#contato">Vamos conversar</a>
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--creme);
+  color: var(--preto);
+  overflow-x: hidden;
+}
+
+/* ─── CURSOR ─── */
+.cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--verde);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, opacity 0.2s;
+  mix-blend-mode: multiply;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 22px 64px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,247,242,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--bege-escuro);
+  transition: padding 0.3s;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--verde);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--marrom-claro); }
+.nav-links { display: flex; gap: 38px; align-items: center; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--cinza); text-decoration: none;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--preto); }
+.nav-cta {
+  background: var(--verde) !important;
+  color: var(--bege) !important;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.06em !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { background: var(--marrom) !important; transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  padding: 130px 64px 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-bg-shape {
+  position: absolute;
+  right: -80px; top: 60px;
+  width: 52vw; height: 88vh;
+  background: var(--bege);
+  border-radius: 60% 0 0 55%;
+  z-index: 0;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+.hero-text {}
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--marrom);
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 28px; height: 2px;
+  background: var(--marrom-claro);
+  border-radius: 2px;
+}
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -2px;
+  color: var(--preto);
+  margin-bottom: 8px;
+  animation: fadeUp 0.7s 0.08s ease both;
+}
+.hero-h1-line2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.96;
+  letter-spacing: -2px;
+  color: var(--verde);
+  margin-bottom: 8px;
+  animation: fadeUp 0.7s 0.14s ease both;
+}
+.hero-h1-line3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -2px;
+  color: var(--preto);
+  margin-bottom: 32px;
+  animation: fadeUp 0.7s 0.18s ease both;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--cinza);
+  line-height: 1.75;
+  max-width: 420px;
+  margin-bottom: 44px;
+  animation: fadeUp 0.7s 0.22s ease both;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.28s ease both;
+}
+.btn-primary {
+  background: var(--verde);
+  color: var(--bege);
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--marrom); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(61,90,62,0.25); }
+.btn-ghost {
+  border: 1.5px solid var(--bege-escuro);
+  color: var(--cinza);
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: var(--verde); color: var(--verde); }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+.hero-photo-frame {
+  position: relative;
+  width: 380px;
+}
+.hero-photo-img,
+.hero-photo-slot {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 200px 200px 120px 120px;
+  object-fit: cover;
+  display: block;
+}
+.hero-photo-slot {
+  background: var(--bege-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--marrom);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 2px dashed var(--marrom-claro);
+  transition: border-color 0.2s;
+  text-align: center;
+  padding: 30px;
+}
+.hero-photo-slot:hover { border-color: var(--marrom); }
+.hero-photo-slot svg { width: 44px; height: 44px; opacity: 0.45; }
+
+.hero-badge {
+  position: absolute;
+  bottom: 30px; left: -40px;
+  background: var(--verde);
+  color: var(--bege);
+  padding: 18px 22px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.14);
+}
+.hero-badge strong { font-size: 1.6rem; font-family: 'Syne', sans-serif; display: block; line-height: 1.1; }
+.hero-badge2 {
+  position: absolute;
+  top: 30px; right: -30px;
+  background: var(--creme);
+  border: 2px solid var(--bege-escuro);
+  color: var(--verde);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+.hero-deco-circle {
+  position: absolute;
+  width: 80px; height: 80px;
+  border: 2px solid var(--bege-escuro);
+  border-radius: 50%;
+  top: -20px; left: -20px;
+}
+
+/* Stats bar */
+.hero-stats {
+  position: absolute;
+  bottom: 48px; left: 64px;
+  display: flex;
+  gap: 48px;
+  z-index: 1;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.stat strong {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--verde);
+  line-height: 1;
+  display: block;
+}
+.stat span { font-size: 0.8rem; color: var(--cinza); margin-top: 2px; display: block; }
+
+/* ─── SECTION COMMONS ─── */
+section { }
+.container { max-width: 1200px; margin: 0 auto; }
+.s-pad { padding: 110px 64px; }
+
+.s-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--marrom);
+  margin-bottom: 14px;
+}
+.s-label::before { content: ''; width: 24px; height: 2px; background: var(--marrom-claro); border-radius: 2px; display: block; }
+.s-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--preto);
+  letter-spacing: -1px;
+}
+.s-h2 em { font-style: italic; color: var(--verde); }
+.s-h2-light { color: var(--bege); }
+.s-h2-light em { color: var(--marrom-claro); }
+
+/* ─── SOBRE MIM ─── */
+#sobre {
+  background: var(--bege);
+  padding: 110px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+.sobre-img-area { position: relative; }
+.sobre-img,
+.sobre-img-slot {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 140px 140px 60px 60px;
+  object-fit: cover;
+  display: block;
+}
+.sobre-img-slot {
+  background: var(--bege-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--marrom);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 2px dashed var(--marrom-claro);
+  transition: border-color 0.2s;
+  text-align: center;
+  padding: 30px;
+}
+.sobre-img-slot:hover { border-color: var(--marrom); }
+.sobre-img-slot svg { width: 40px; height: 40px; opacity: 0.45; }
+
+.sobre-sticker {
+  position: absolute;
+  bottom: -24px; right: -24px;
+  width: 108px; height: 108px;
+  background: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bege);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 14px;
+  line-height: 1.4;
+  box-shadow: 0 8px 30px rgba(61,90,62,0.3);
+}
+
+.sobre-text {}
+.sobre-intro {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--cinza);
+  line-height: 1.8;
+  margin: 20px 0 30px;
+}
+.sobre-intro strong { font-weight: 500; color: var(--preto); }
+.sobre-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.sobre-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--cinza);
+  line-height: 1.5;
+}
+.sobre-list li::before {
+  content: '';
+  flex-shrink: 0;
+  margin-top: 7px;
+  width: 6px; height: 6px;
+  background: var(--marrom-claro);
+  border-radius: 50%;
+}
+.sobre-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.pill-verde { background: var(--verde); color: var(--bege); }
+.pill-marrom { background: var(--marrom); color: var(--bege); }
+.pill-outline { background: transparent; border: 1.5px solid var(--bege-escuro); color: var(--cinza); }
+
+/* ─── EVENTOS ─── */
+#eventos {
+  background: var(--preto);
+  padding: 110px 64px;
+}
+.eventos-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+.eventos-sub {
+  font-size: 1rem;
+  color: rgba(240,233,220,0.6);
+  line-height: 1.7;
+  max-width: 340px;
+  font-weight: 300;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ev-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #232320;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.ev-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+.ev-card.span2 { grid-column: span 2; }
+.ev-card.span3 { grid-column: span 3; }
+
+.ev-media {
+  position: relative;
+  overflow: hidden;
+}
+.ev-card .ev-media { height: 220px; }
+.ev-card.span2 .ev-media { height: 260px; }
+.ev-card.span3 .ev-media { height: 300px; }
+
+.ev-media-slot {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a27 0%, var(--verde) 200%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(240,233,220,0.6);
+  font-size: 0.82rem;
+  cursor: pointer;
+  border: 1px dashed rgba(255,255,255,0.1);
+  transition: opacity 0.2s;
+  text-align: center;
+  padding: 20px;
+}
+.ev-media-slot:hover { opacity: 0.8; }
+.ev-media-slot svg { width: 36px; height: 36px; opacity: 0.5; }
+.ev-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.ev-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+.ev-type {
+  display: inline-block;
+  background: var(--marrom);
+  color: var(--bege);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+.ev-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bege);
+  line-height: 1.2;
+}
+.ev-card.span2 .ev-name { font-size: 1.5rem; }
+.ev-card.span3 .ev-name { font-size: 1.8rem; }
+
+.ev-body { padding: 22px; }
+.ev-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.ev-field strong {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--marrom-claro);
+  margin-bottom: 4px;
+}
+.ev-field p { font-size: 0.84rem; color: rgba(240,233,220,0.65); line-height: 1.5; }
+.ev-result {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--marrom-claro);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  font-size: 0.84rem;
+  color: var(--marrom-claro);
+  line-height: 1.5;
+}
+
+/* ─── GALERIA ─── */
+#galeria {
+  background: var(--bege);
+  padding: 110px 64px;
+}
+.galeria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.galeria-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bege-escuro);
+  padding: 4px;
+  border-radius: 999px;
+}
+.g-tab {
+  padding: 9px 26px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--cinza);
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.g-tab.active { background: var(--verde); color: var(--bege); }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 14px;
+}
+.g-item {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: var(--bege-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--marrom);
+  font-size: 0.8rem;
+  border: 2px dashed var(--bege-escuro);
+  transition: all 0.2s;
+  text-align: center;
+  padding: 16px;
+}
+.g-item:hover { border-color: var(--marrom-claro); transform: scale(1.02); }
+.g-item svg { width: 28px; height: 28px; opacity: 0.45; }
+.g-item.tall { grid-row: span 2; }
+.g-item.wide { grid-column: span 2; }
+.g-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.g-video-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(28,27,24,0.7);
+  color: var(--bege);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
+.g-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--verde);
+  font-size: 1.1rem;
+}
+.g-hint {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: var(--cinza);
+}
+
+/* ─── SERVIÇOS ─── */
+#servicos {
+  background: var(--creme);
+  padding: 110px 64px;
+}
+.servicos-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.servicos-desc {
+  font-size: 1rem;
+  color: var(--cinza);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.sv-card {
+  background: var(--bege);
+  border-radius: 22px;
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1.5px solid transparent;
+}
+.sv-card:hover { transform: translateY(-5px); border-color: var(--bege-escuro); box-shadow: 0 16px 50px rgba(0,0,0,0.08); }
+.sv-card.dark { background: var(--verde); }
+.sv-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--preto);
+  opacity: 0.06;
+  position: absolute;
+  top: 10px; right: 20px;
+  line-height: 1;
+}
+.sv-card.dark .sv-num { color: var(--bege); }
+.sv-icon {
+  width: 48px; height: 48px;
+  background: var(--verde);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.sv-card.dark .sv-icon { background: rgba(255,255,255,0.18); }
+.sv-h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 12px;
+}
+.sv-card.dark .sv-h4 { color: var(--bege); }
+.sv-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.sv-list li {
+  font-size: 0.84rem;
+  color: var(--cinza);
+  display: flex; align-items: flex-start; gap: 8px;
+  line-height: 1.5;
+}
+.sv-list li::before { content: '→'; color: var(--marrom-claro); font-size: 0.78rem; flex-shrink: 0; margin-top: 1px; }
+.sv-card.dark .sv-list li { color: rgba(240,233,220,0.72); }
+
+/* ─── MARKETING ─── */
+#marketing {
+  background: var(--bege);
+  padding: 110px 64px;
+}
+.mk-scroll {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-top: 48px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bege-escuro) transparent;
+}
+.mk-card {
+  flex: 0 0 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--creme);
+  border: 1.5px solid var(--bege-escuro);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.mk-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.mk-media {
+  height: 190px;
+  background: var(--bege-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--marrom);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px dashed var(--bege-escuro);
+}
+.mk-media:hover { opacity: 0.8; }
+.mk-media svg { width: 28px; height: 28px; opacity: 0.45; }
+.mk-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mk-body { padding: 18px 20px; }
+.mk-tag {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--marrom);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.mk-h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 6px;
+}
+.mk-p { font-size: 0.8rem; color: var(--cinza); line-height: 1.6; }
+
+/* ─── CTA FINAL ─── */
+#contato {
+  background: var(--verde);
+  padding: 100px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.cta-text {}
+.cta-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--bege);
+  margin-bottom: 8px;
+  letter-spacing: -1.5px;
+}
+.cta-h2 em { font-style: italic; color: var(--marrom-claro); }
+.cta-sub {
+  font-size: 1rem;
+  color: rgba(240,233,220,0.65);
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 20px 0 36px;
+  max-width: 380px;
+}
+.cta-btn-wpp {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: white;
+  padding: 18px 36px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.cta-btn-wpp:hover { background: #1fb855; transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+.cta-btn-wpp svg { width: 22px; height: 22px; }
+
+.cta-info {}
+.cta-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cta-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 0.92rem;
+  color: rgba(240,233,220,0.75);
+  line-height: 1.6;
+}
+.cta-list .icon {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--preto);
+  padding: 32px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--bege);
+  opacity: 0.5;
+}
+footer p { font-size: 0.78rem; color: rgba(240,233,220,0.3); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+  #hero { padding: 110px 24px 160px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .hero-stats { left: 24px; }
+  .s-pad, #sobre, #eventos, #galeria, #servicos, #marketing, #contato { padding: 80px 24px; }
+  #sobre { grid-template-columns: 1fr; }
+  .sobre-img-area { max-width: 280px; }
+  .eventos-grid { grid-template-columns: 1fr; }
+  .ev-card.span2, .ev-card.span3 { grid-column: 1; }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+  .g-item.wide { grid-column: span 2; }
+  .servicos-intro { grid-template-columns: 1fr; gap: 30px; }
+  .servicos-grid { grid-template-columns: 1fr; }
+  #contato { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">júlia<span>.</span></a>
+  <div class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato" class="nav-cta">Vamos conversar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-kicker">Analista de Marketing &amp; Eventos</div>
+      <div class="hero-h1">Marketing</div>
+      <div class="hero-h1-line2">que acontece</div>
+      <div class="hero-h1-line3">de verdade.</div>
+      <p class="hero-sub">Da estratégia ao dia do evento: conduzo projetos complexos com organização, tomada de decisão rápida e entrega consistente em congressos, feiras, stands e eventos online.</p>
+      <div class="hero-btns">
+        <a href="#contato" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Vamos conversar
+        </a>
+        <a href="#eventos" class="btn-ghost">Ver projetos</a>
       </div>
-    </header>
-
-    <main>
-      <section class="section fade-in" id="sobre">
-        <h2>Sobre mim</h2>
-        <div class="split">
-          <p>
-            Sou analista de marketing e publicitária com experiência prática em
-            planejamento e execução de eventos presenciais e online. Atuo na ponte
-            entre visão estratégica e operação: transformo briefing em plano e plano
-            em entrega.
-          </p>
-          <ul class="checklist">
-            <li>Planejamento e execução de eventos de diferentes portes</li>
-            <li>Gestão de fornecedores e cronogramas críticos</li>
-            <li>Marketing estratégico conectado ao objetivo de negócio</li>
-            <li>Resolução de imprevistos com foco em resultado</li>
-          </ul>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <div class="hero-deco-circle"></div>
+        <!-- Substitua pela sua foto: <img class="hero-photo-img" src="sua-foto.jpg" alt="Júlia"> -->
+        <div class="hero-photo-slot" title="Adicione sua foto aqui">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Adicione sua foto aqui</span>
         </div>
-      </section>
-
-      <section class="section fade-in" id="portfolio">
-        <div class="section__heading">
-          <h2>Portfólio de Eventos</h2>
-          <p>
-            Projetos reais com contexto, desafios e decisões de execução para mostrar
-            capacidade prática — não apenas estética.
-          </p>
+        <div class="hero-badge">
+          <strong>+5</strong>
+          anos de<br>experiência
         </div>
+        <div class="hero-badge2">✨ Disponível para projetos</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><strong>30+</strong><span>Eventos executados</span></div>
+    <div class="stat"><strong>100%</strong><span>Entrega no prazo</span></div>
+    <div class="stat"><strong>3</strong><span>Áreas de atuação</span></div>
+  </div>
+</section>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-card__media" aria-hidden="true">
-              <span>Congresso</span>
-            </div>
-            <h3>CIOSP — Congresso Odontológico</h3>
-            <p><strong>Contexto:</strong> operação de stand em evento de grande fluxo.</p>
-            <p><strong>Papel:</strong> planejamento, alinhamento de equipe e execução no local.</p>
-            <p>
-              <strong>Desafio:</strong> alta demanda de ativações simultâneas e ajustes de última hora.
-            </p>
-            <p>
-              <strong>Solução:</strong> priorização por impacto, plano tático por turnos e comunicação centralizada.
-            </p>
-            <p><strong>Resultado:</strong> operação fluida, experiência consistente e metas atendidas.</p>
-          </article>
+<!-- SOBRE MIM -->
+<section id="sobre">
+  <div class="sobre-img-area reveal">
+    <!-- Substitua pela sua foto: <img class="sobre-img" src="sua-foto.jpg" alt="Júlia"> -->
+    <div class="sobre-img-slot" title="Adicione uma foto sua aqui">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione sua foto aqui</span>
+    </div>
+    <div class="sobre-sticker">Hello!<br>Prazer,<br>Júlia 💚</div>
+  </div>
+  <div class="sobre-text reveal">
+    <div class="s-label">Sobre mim</div>
+    <h2 class="s-h2">Conectando <em>estratégia</em><br>e execução</h2>
+    <p class="sobre-intro">
+      Sou analista de marketing e publicitária com experiência prática em <strong>planejamento e execução de eventos presenciais e online</strong>. Atuo na ponte entre visão estratégica e operação: transformo briefing em plano e plano em entrega real.
+    </p>
+    <ul class="sobre-list">
+      <li>Planejamento e execução de eventos de diferentes portes</li>
+      <li>Gestão de fornecedores e cronogramas críticos</li>
+      <li>Marketing estratégico conectado ao objetivo de negócio</li>
+      <li>Resolução de imprevistos com foco em resultado</li>
+      <li>Design e conteúdo para redes sociais</li>
+    </ul>
+    <div class="sobre-pills">
+      <span class="pill pill-verde">Eventos</span>
+      <span class="pill pill-marrom">Marketing</span>
+      <span class="pill pill-outline">Design</span>
+      <span class="pill pill-outline">Gestão de redes sociais</span>
+      <span class="pill pill-outline">Estratégia de conteúdo</span>
+    </div>
+  </div>
+</section>
 
-          <article class="project-card">
-            <div class="project-card__media" aria-hidden="true">
-              <span>Evento Corporativo</span>
-            </div>
-            <h3>Lançamento de Produto B2B</h3>
-            <p><strong>Contexto:</strong> evento presencial para parceiros estratégicos.</p>
-            <p><strong>Papel:</strong> gestão de fornecedores, logística e cronograma macro.</p>
-            <p>
-              <strong>Desafio:</strong> atraso de entrega de materiais cenográficos.
-            </p>
-            <p>
-              <strong>Solução:</strong> renegociação de janela de montagem e plano alternativo de ambientação.
-            </p>
-            <p><strong>Resultado:</strong> evento entregue no prazo com narrativa de marca preservada.</p>
-          </article>
+<!-- PORTFÓLIO EVENTOS -->
+<section id="eventos">
+  <div class="eventos-intro reveal">
+    <div>
+      <div class="s-label" style="color:var(--marrom-claro)">Portfólio</div>
+      <h2 class="s-h2 s-h2-light">Eventos que <em>aconteceram</em></h2>
+    </div>
+    <p class="eventos-sub">Projetos reais com contexto, desafios e decisões de execução — para mostrar capacidade prática, não apenas estética.</p>
+  </div>
 
-          <article class="project-card">
-            <div class="project-card__media" aria-hidden="true">
-              <span>Online</span>
-            </div>
-            <h3>Treinamento Online Nacional</h3>
-            <p><strong>Contexto:</strong> capacitação remota para times distribuídos.</p>
-            <p><strong>Papel:</strong> jornada do participante, comunicação e operação de transmissão.</p>
-            <p>
-              <strong>Desafio:</strong> manter engajamento e reduzir abandono em sessões longas.
-            </p>
-            <p>
-              <strong>Solução:</strong> blocos curtos, roteiros interativos e monitoramento ao vivo.
-            </p>
-            <p><strong>Resultado:</strong> maior retenção e feedback positivo dos participantes.</p>
-          </article>
+  <div class="eventos-grid">
+    <!-- CARD DESTAQUE -->
+    <div class="ev-card span2 reveal">
+      <div class="ev-media">
+        <!-- <img src="ciosp.jpg" alt="CIOSP"> -->
+        <div class="ev-media-slot" title="Adicione a foto do evento">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Adicione a foto do evento aqui</span>
         </div>
-      </section>
-
-      <section class="section fade-in" id="servicos">
-        <h2>Serviços</h2>
-        <div class="cards-grid">
-          <article class="service-card">
-            <h3>Planejamento de eventos</h3>
-            <p>Estruturação de objetivos, cronograma, recursos e plano de ação.</p>
-          </article>
-          <article class="service-card">
-            <h3>Execução e operação</h3>
-            <p>Coordenação de ponta a ponta para garantir entrega no mundo real.</p>
-          </article>
-          <article class="service-card">
-            <h3>Marketing estratégico</h3>
-            <p>Posicionamento, narrativa e ativação para gerar relevância e resultado.</p>
-          </article>
-          <article class="service-card">
-            <h3>Gestão de fornecedores</h3>
-            <p>Alinhamento, negociação e controle de qualidade com foco em prazo.</p>
-          </article>
-          <article class="service-card">
-            <h3>Eventos online</h3>
-            <p>Planejamento e execução de treinamentos, webinars e encontros digitais.</p>
-          </article>
+        <div class="ev-overlay">
+          <span class="ev-type">Congresso</span>
+          <div class="ev-name">CIOSP — Congresso Odontológico</div>
         </div>
-      </section>
-
-      <section class="section fade-in" id="marketing">
-        <h2>Projetos de Marketing</h2>
-        <div class="pillars">
-          <div class="pillar">Conteúdo para redes sociais</div>
-          <div class="pillar">Design e materiais de campanha</div>
-          <div class="pillar">Campanhas integradas para eventos</div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-grid2">
+          <div class="ev-field"><strong>Papel</strong><p>Planejamento, alinhamento de equipe e execução no local</p></div>
+          <div class="ev-field"><strong>Desafio</strong><p>Alta demanda de ativações simultâneas e ajustes de última hora</p></div>
+          <div class="ev-field"><strong>Solução</strong><p>Priorização por impacto, plano tático por turnos e comunicação centralizada</p></div>
+          <div class="ev-field"><strong>Porte</strong><p>Grande porte — evento de alto fluxo</p></div>
         </div>
-      </section>
+        <div class="ev-result">✅ Operação fluida, experiência consistente e metas atendidas.</div>
+      </div>
+    </div>
 
-      <section class="section section--accent fade-in" id="beneficios">
-        <h2>Por que meu trabalho entrega</h2>
-        <ul class="benefits">
-          <li>Organização e execução eficiente com visão de operação real</li>
-          <li>Pensamento estratégico alinhado aos objetivos do cliente</li>
-          <li>Capacidade de resolver problemas sob pressão</li>
-          <li>Foco em resultado, experiência e reputação de marca</li>
-        </ul>
-      </section>
+    <!-- CARD 2 -->
+    <div class="ev-card reveal">
+      <div class="ev-media">
+        <div class="ev-media-slot" title="Adicione a foto do evento">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Adicione a foto aqui</span>
+        </div>
+        <div class="ev-overlay">
+          <span class="ev-type">Evento Corporativo</span>
+          <div class="ev-name">Lançamento de Produto B2B</div>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-grid2">
+          <div class="ev-field"><strong>Papel</strong><p>Gestão de fornecedores, logística e cronograma macro</p></div>
+          <div class="ev-field"><strong>Desafio</strong><p>Atraso de entrega de materiais cenográficos</p></div>
+        </div>
+        <div class="ev-result">✅ Evento entregue no prazo com narrativa de marca preservada.</div>
+      </div>
+    </div>
 
-      <section class="section cta-final fade-in" id="contato">
-        <h2>Vamos fazer seu evento acontecer?</h2>
-        <p>
-          Se você procura uma profissional que planeja com estratégia e executa com
-          precisão, vamos conversar sobre seu próximo projeto.
-        </p>
-        <a
-          class="btn btn--primary"
-          href="https://wa.me/5500000000000"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Falar no WhatsApp</a
-        >
-      </section>
-    </main>
+    <!-- CARD 3 -->
+    <div class="ev-card reveal">
+      <div class="ev-media">
+        <div class="ev-media-slot" title="Adicione a foto/print do evento">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <span>Adicione print ou foto aqui</span>
+        </div>
+        <div class="ev-overlay">
+          <span class="ev-type">Online</span>
+          <div class="ev-name">Treinamento Online Nacional</div>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-grid2">
+          <div class="ev-field"><strong>Papel</strong><p>Jornada do participante, comunicação e operação de transmissão</p></div>
+          <div class="ev-field"><strong>Desafio</strong><p>Manter engajamento e reduzir abandono em sessões longas</p></div>
+        </div>
+        <div class="ev-result">✅ Maior retenção e feedback positivo dos participantes.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="footer">
-      <p>© <span id="currentYear"></span> Julia • Marketing e Execução de Eventos</p>
-    </footer>
+<!-- GALERIA DE FOTOS & VÍDEOS -->
+<section id="galeria">
+  <div class="galeria-header reveal">
+    <div>
+      <div class="s-label">Galeria</div>
+      <h2 class="s-h2">Bastidores & <em>momentos</em></h2>
+    </div>
+    <div class="galeria-tabs">
+      <button class="g-tab active" onclick="switchTab(this,'fotos')">📷 Fotos</button>
+      <button class="g-tab" onclick="switchTab(this,'videos')">🎬 Vídeos</button>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- FOTOS -->
+  <div id="tab-fotos" class="galeria-grid reveal">
+    <div class="g-item tall">
+      <!-- <img src="foto1.jpg"> -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto</span>
+    </div>
+    <div class="g-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto</span>
+    </div>
+    <div class="g-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto</span>
+    </div>
+    <div class="g-item tall">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto</span>
+    </div>
+    <div class="g-item wide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto horizontal</span>
+    </div>
+    <div class="g-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>Adicione uma foto</span>
+    </div>
+  </div>
+
+  <!-- VÍDEOS (hidden) -->
+  <div id="tab-videos" class="galeria-grid reveal" style="display:none">
+    <div class="g-item wide" style="position:relative">
+      <div class="g-video-badge">🎬 Vídeo</div>
+      <div class="g-play">▶</div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+      <span style="margin-top:40px">Cole aqui o link do seu vídeo ou bastidor de evento</span>
+    </div>
+    <div class="g-item">
+      <div class="g-video-badge">🎬 Vídeo</div>
+      <div class="g-play">▶</div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+      <span style="margin-top:40px">Adicione vídeo aqui</span>
+    </div>
+    <div class="g-item">
+      <div class="g-video-badge">🎬 Vídeo</div>
+      <div class="g-play">▶</div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+      <span style="margin-top:40px">Adicione vídeo aqui</span>
+    </div>
+  </div>
+
+  <p class="g-hint">💡 As fotos e vídeos marcados em pontilhado são os espaços para você adicionar seu conteúdo real.</p>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="servicos-intro reveal">
+    <div>
+      <div class="s-label">Serviços</div>
+      <h2 class="s-h2">O que eu<br><em>entrego</em></h2>
+    </div>
+    <p class="servicos-desc">Trabalho de forma multifuncional, conectando planejamento, criação e execução. Sempre com foco em clareza, consistência e resultados possíveis dentro da realidade de cada projeto.</p>
+  </div>
+  <div class="servicos-grid">
+    <div class="sv-card dark reveal">
+      <div class="sv-num">01</div>
+      <div class="sv-icon">🎯</div>
+      <div class="sv-h4">Planejamento de Eventos</div>
+      <ul class="sv-list">
+        <li>Estruturação de objetivos e cronograma</li>
+        <li>Briefing, recursos e plano de ação</li>
+        <li>Mapeamento de riscos e contingências</li>
+      </ul>
+    </div>
+    <div class="sv-card reveal">
+      <div class="sv-num">02</div>
+      <div class="sv-icon">⚙️</div>
+      <div class="sv-h4">Execução e Operação</div>
+      <ul class="sv-list">
+        <li>Coordenação de ponta a ponta</li>
+        <li>Gestão de equipe e fornecedores no dia</li>
+        <li>Resolução de imprevistos em tempo real</li>
+      </ul>
+    </div>
+    <div class="sv-card reveal">
+      <div class="sv-num">03</div>
+      <div class="sv-icon">📊</div>
+      <div class="sv-h4">Marketing Estratégico</div>
+      <ul class="sv-list">
+        <li>Posicionamento e linha editorial</li>
+        <li>Estratégia de conteúdo para eventos</li>
+        <li>Ativações e comunicação integrada</li>
+      </ul>
+    </div>
+    <div class="sv-card reveal">
+      <div class="sv-num">04</div>
+      <div class="sv-icon">🤝</div>
+      <div class="sv-h4">Gestão de Fornecedores</div>
+      <ul class="sv-list">
+        <li>Alinhamento, negociação e controle</li>
+        <li>Acompanhamento de entregas e prazos</li>
+        <li>Qualidade com foco em resultado</li>
+      </ul>
+    </div>
+    <div class="sv-card reveal">
+      <div class="sv-num">05</div>
+      <div class="sv-icon">💻</div>
+      <div class="sv-h4">Eventos Online</div>
+      <ul class="sv-list">
+        <li>Webinars, treinamentos e transmissões</li>
+        <li>Jornada do participante e engajamento</li>
+        <li>Operação de plataformas digitais</li>
+      </ul>
+    </div>
+    <div class="sv-card reveal">
+      <div class="sv-num">06</div>
+      <div class="sv-icon">🎨</div>
+      <div class="sv-h4">Design para Redes Sociais</div>
+      <ul class="sv-list">
+        <li>Criação de artes para feed e stories</li>
+        <li>Padronização visual do perfil</li>
+        <li>Materiais gráficos para campanhas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS MARKETING -->
+<section id="marketing">
+  <div class="reveal">
+    <div class="s-label">Projetos de Marketing</div>
+    <h2 class="s-h2">Conteúdo que <em>converte</em></h2>
+  </div>
+  <div class="mk-scroll reveal">
+    <div class="mk-card">
+      <div class="mk-media" title="Adicione imagem do projeto">
+        <!-- <img src="projeto1.jpg"> -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Adicione imagem do projeto</span>
+      </div>
+      <div class="mk-body">
+        <div class="mk-tag">Redes Sociais</div>
+        <div class="mk-h4">Nome do cliente ou projeto</div>
+        <p class="mk-p">Breve descrição: o que foi feito, para quem e qual resultado gerou.</p>
+      </div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-media" title="Adicione imagem do projeto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Adicione imagem do projeto</span>
+      </div>
+      <div class="mk-body">
+        <div class="mk-tag">Design</div>
+        <div class="mk-h4">Nome do cliente ou projeto</div>
+        <p class="mk-p">Breve descrição: o que foi feito, para quem e qual resultado gerou.</p>
+      </div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-media" title="Adicione imagem do projeto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Adicione imagem do projeto</span>
+      </div>
+      <div class="mk-body">
+        <div class="mk-tag">Campanha</div>
+        <div class="mk-h4">Nome do cliente ou projeto</div>
+        <p class="mk-p">Breve descrição: o que foi feito, para quem e qual resultado gerou.</p>
+      </div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-media" title="Adicione imagem do projeto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Adicione imagem do projeto</span>
+      </div>
+      <div class="mk-body">
+        <div class="mk-tag">Estratégia</div>
+        <div class="mk-h4">Nome do cliente ou projeto</div>
+        <p class="mk-p">Breve descrição: o que foi feito, para quem e qual resultado gerou.</p>
+      </div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-media" title="Adicione imagem do projeto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Adicione imagem do projeto</span>
+      </div>
+      <div class="mk-body">
+        <div class="mk-tag">Redes Sociais</div>
+        <div class="mk-h4">Nome do cliente ou projeto</div>
+        <p class="mk-p">Breve descrição: o que foi feito, para quem e qual resultado gerou.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contato">
+  <div class="cta-text reveal">
+    <div class="s-label" style="color:var(--marrom-claro)">Contato</div>
+    <h2 class="cta-h2">Vamos fazer seu<br>evento <em>acontecer?</em></h2>
+    <p class="cta-sub">Se você procura uma profissional que planeja com estratégia e executa com precisão, vamos conversar sobre seu próximo projeto.</p>
+    <a href="https://wa.me/5500000000000" class="cta-btn-wpp" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+  <div class="cta-info reveal">
+    <ul class="cta-list">
+      <li>
+        <div class="icon">🎯</div>
+        <div><strong style="color:var(--bege);display:block;margin-bottom:4px">Execução real</strong>Não apenas planejamento: estou presente do briefing ao último detalhe do dia do evento.</div>
+      </li>
+      <li>
+        <div class="icon">⚡</div>
+        <div><strong style="color:var(--bege);display:block;margin-bottom:4px">Decisão rápida</strong>Experiência em resolver imprevistos sob pressão sem comprometer a entrega.</div>
+      </li>
+      <li>
+        <div class="icon">🤝</div>
+        <div><strong style="color:var(--bege);display:block;margin-bottom:4px">Resultado de verdade</strong>Foco em consistência de marca, experiência do público e objetivos do negócio.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">júlia ariane.</span>
+  <p>© 2025 · Marketing & Execução de Eventos</p>
+</footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX - 5 + 'px';
+  cursor.style.top  = e.clientY - 5 + 'px';
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Tab switcher
+function switchTab(btn, tab) {
+  document.querySelectorAll('.g-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-fotos').style.display  = tab === 'fotos'  ? 'grid' : 'none';
+  document.getElementById('tab-videos').style.display = tab === 'videos' ? 'grid' : 'none';
+}
+
+// Nav shrink on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.padding = window.scrollY > 60 ? '14px 64px' : '22px 64px';
+});
+</script>
+</body>
 </html>
