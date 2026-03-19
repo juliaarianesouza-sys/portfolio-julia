@@ -1089,26 +1089,17 @@ footer p { font-size: 0.78rem; color: rgba(240,233,220,0.3); }
 </div>
 
   <!-- VÍDEOS (hidden) -->
-  <div id="tab-videos" class="galeria-grid reveal" style="display:none">
-    <div class="g-item wide" style="position:relative">
-      <div class="g-video-badge">🎬 Vídeo</div>
-      <div class="g-play">▶</div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-      <span style="margin-top:40px">Cole aqui o link do seu vídeo ou bastidor de evento</span>
-    </div>
-    <div class="g-item">
-      <div class="g-video-badge">🎬 Vídeo</div>
-      <div class="g-play">▶</div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-      <span style="margin-top:40px">Adicione vídeo aqui</span>
-    </div>
-    <div class="g-item">
-      <div class="g-video-badge">🎬 Vídeo</div>
-      <div class="g-play">▶</div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-      <span style="margin-top:40px">Adicione vídeo aqui</span>
-    </div>
+  <div id="tab-videos" class="galeria-grid" style="display:none; grid-template-columns: repeat(3,1fr); grid-auto-rows: 480px;">
+  <div class="g-item" style="border-radius:16px; overflow:hidden;">
+    <iframe src="https://player.vimeo.com/video/1175019728" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
   </div>
+  <div class="g-item" style="border-radius:16px; overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/CLYNbhzGHmw" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="g-item" style="border-radius:16px; overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/DuK12-FnsLQ" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
 </section>
 
